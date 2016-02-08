@@ -1,7 +1,4 @@
 
-
-
-
 artifactory {
     contextUrl = 'http://jenkins.caringbridge.org:8081/artifactory'
     publish {
@@ -20,12 +17,22 @@ artifactory {
         contextUrl = 'http://jenkins.caringbridge.org:8081/artifactory'
         repository {
             repoKey = 'libs-release'
-            maven =true
         }
         repository {
             repoKey = 'libs-snapshot'
-            maven =true
+        }
+        repository {
+            repoKey = 'remote-repos'
         }
     }
 }
 
+
+
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            from components.java
+//        }
+//    }
+//}
