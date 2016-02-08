@@ -1,10 +1,4 @@
-plugins{
-    id "com.jfrog.artifactory" version "4.0.0"
-}
 
-
-apply plugin: 'com.jfrog.artifactory'
-apply plugin: 'maven-publish'
 
 
 
@@ -23,7 +17,15 @@ artifactory {
         }
     }
     resolve {
-        repoKey = 'jcenter'
+        contextUrl = 'http://jenkins.caringbridge.org:8081/artifactory'
+        repository {
+            repoKey = 'libs-release'
+            maven =true
+        }
+        repository {
+            repoKey = 'libs-snapshot'
+            maven =true
+        }
     }
 }
 
